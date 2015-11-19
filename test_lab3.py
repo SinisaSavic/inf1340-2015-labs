@@ -21,16 +21,51 @@ def test_months_with_31():
     for item in MONTHS_WITH_31:
         assert days_in_month(item) == 31
 
+
 # Write a test function for the months with 30 days
+def test_months_with_30():
+    """
+    Test months with 30 days
+    """
+    for item in MONTHS_WITH_30:
+        assert days_in_month(item) == 30
 
 
 # Write a test function for the months with 28 or 29 days
+def test_months_with_28_or_29():
+    """
+    Test months with 28 or 29 days
+    """
+    for item in MONTHS_WITH_28_or_29:
+        assert days_in_month(item) == 28 or 29
 
 
 # Write a test function for months that are not capitalized properly
 # Hint: use the lower() string method
+def test_months_not_capitalized():
+    """
+    Test months not capitalized properly
+    """
+    for item in MONTHS_WITH_30:
+        assert days_in_month(item.lower()) == 30
+
+    for item in MONTHS_WITH_28_or_29:
+        assert days_in_month(item.lower()) == 28 or 29
+
+    for item in MONTHS_WITH_31:
+        assert days_in_month(item.lower()) == 31
+
 
 # Write a test function for unexpected input
 # Hint: use a try/except block to deal with the exception
 # Hint: use data types other than strings as input
+def test_wrong_input():
+    """
+    Test for unexpected input
+    """
 
+    try:
+        days_in_month("hello")
+        assert False
+    except ValueError:
+        assert True
