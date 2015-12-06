@@ -63,11 +63,13 @@ def name_that_shape():
 
 
 def side_input():
-
-    side = raw_input("Enter the Number of sides")
-    while not (side.isdigit() or (side[0] == "." and side[1:].isdigit())):
-        side = "Error"
-    side = int(side)
+    side = ""
+    integer = False
+    while integer == False:
+        side = raw_input("Enter Number of Sides:")
+        if side.isdigit() == True or side[0] == "-" and side[1:].isdigit() == True:
+            side = int(side)
+            integer = True
     return side
 
 # side_input()
