@@ -69,3 +69,15 @@ def test_wrong_input():
         assert False
     except ValueError:
         assert True
+
+    try:
+        days_in_month(34)
+        assert False
+    except AttributeError:
+        assert True
+
+    try:
+        days_in_month()
+        assert False
+    except TypeError:
+        assert True
